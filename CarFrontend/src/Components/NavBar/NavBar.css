@@ -1,0 +1,61 @@
+/* Container */
+.nav-ctn {
+  width: 100%;
+  height: 70px;
+  background: #1e1e1e;  /* dark gray for premium look */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo-ctn {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* Navigation List */
+.list-ctn {
+  display: flex;
+  gap: 20px;
+}
+
+.list-ctn button {
+  background: transparent;
+  border: none;
+  color: #f5f5f5;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.list-ctn button:hover {
+  background:white;
+  color: #000000;
+  transform: scale(1.08); 
+}
+
+/* Login */
+.login-ctn .login-btn {
+  background: #00aaff;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-ctn .login-btn:hover {
+  background: #0088cc;
+  transform: scale(1.08); 
+
+}
