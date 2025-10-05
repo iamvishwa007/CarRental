@@ -1,0 +1,132 @@
+/* Container for the whole page */
+.outer-ctn {
+    background-color: #f2f2f2;
+    height: 100vh;
+    width: 100vw; /* Fixed typo: 100bh → 100vw */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Inner card container */
+.inner-ctn {
+    width: 100%;
+    max-width: 480px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inner-ctn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.inner-ctn h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+/* Input container */
+.input-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.input-ctn label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* Input fields */
+.input-ctn input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+.input-ctn input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Center container for splitting inputs in two columns */
+.center-ctn {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.center-ctn > div {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Sign Up button */
+.middle-ctn button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.middle-ctn button:hover {
+    background-color: #0056b3;
+}
+
+/* Bottom text and login button */
+.bottom-ctn {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.bottom-ctn h4 {
+    font-size: 14px;
+    color: #555;
+}
+
+.bottom-ctn button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 5px;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.bottom-ctn button:hover {
+    color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .center-ctn {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
