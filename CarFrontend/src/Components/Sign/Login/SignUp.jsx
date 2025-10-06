@@ -140,7 +140,7 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$
            </div>
            </div>
            </div>
-           <button type='submit' disabled={passerror || emailError || phoneError}>Sign Up</button>
+           <button type='submit' disabled={passerror|| passStrongError || emailError || phoneError}>Sign Up</button>
            </form>
            <div className='bottom-ctn'><h4>If you already have an account click the | <button onClick={()=>{navigate("/login")}}>Login</button></h4>
            </div>

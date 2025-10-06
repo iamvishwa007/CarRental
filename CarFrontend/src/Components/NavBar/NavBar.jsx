@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './NavBar.css'
 import { FaUserCircle } from 'react-icons/fa'
 
@@ -9,7 +9,22 @@ import {useNavigate} from "react-router-dom"
 const NavBar = ({}) => 
   {
   const navigate=useNavigate();
-  const[user,setUser]=useState();
+  const[user,setUser]=useState(null);
+ 
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate('/');
+  };
+
+
   return (
     <div className='nav-ctn'>
       <div className='logo-ctn'>V CARS</div>
@@ -20,17 +35,18 @@ const NavBar = ({}) =>
         <button>About us</button>
       </div>
       <div className='login-ctn'>
-        {user?
-        (    <div className='user-info'>
-              <FaUserCircle className='user-icon' />
-              <span>{user.username}</span>
-            </div>)
-        :(
-           <button className='login-btn' onClick={()=>{navigate("/Login")}}>
-              Login / SignUp
-            </button>
-        )}
-        </div>
+  {user ? (
+    <div className='user-info'>
+      <FaUserCircle className='user-icon' />
+      <span className='username'>{user.username}</span>
+      <button className='logout-btn' onClick={handleLogout}>Logout</button>
+    </div>
+  ) : (
+    <button className='login-btn' onClick={() => {navigate("/Login")}}>
+      Login / Sign Up
+    </button>
+  )}
+</div>
     </div>
 )
 }
